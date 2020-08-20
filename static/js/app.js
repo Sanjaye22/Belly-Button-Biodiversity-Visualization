@@ -83,21 +83,22 @@ function buildPlots() {
       var data = [trace];
   
       var layout = {
-        title: "Bar Chart: Top 10 OTU",
+        title: "Bar Chart: Top 10 OTU_Samples",
+        titlefont: {
+            size: 18,
+            color: 'rgb(230, 59, 21)'
+        },
         showlegend: false,
         xaxis: {trickangle: -45},
         yaxis: {
             zeroline: false,
             gridwidth: 2},
         bargap: 2,
-        width: 800,
-        height: 500,
-        tickfont: {
-            size: 18,
-            color: "rgb(107, 107, 107)"
-        }
-        }
-          
+        width: 500,
+        height: 400
+      }
+        
+    
     Plotly.newPlot("bar", data, layout); 
     
 
@@ -122,6 +123,11 @@ function buildPlots() {
 
   var layout1 = {
     title: "Bubble Chart: Top 10 OTU_Samples",
+    x: "OTU ID",
+    titlefont: {
+        size: 18,
+        color: 'rgb(230, 59, 21)'
+    },
     pointStyle: "circle"
 }
 
@@ -144,10 +150,18 @@ var trace2 = {
 
   var layout2 = {
     title: "Pie Chart: Top 10 OTU_Samples",
-}
+    titlefont: {
+        size: 18,
+        color: 'rgb(230, 59, 21)'
+},
+    width: 800,
+    height: 500
+  }
 
 Plotly.newPlot("pie", data2, layout2);
+
 });
+
 };
 
 
