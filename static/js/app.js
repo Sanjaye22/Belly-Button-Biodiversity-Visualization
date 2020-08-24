@@ -1,5 +1,3 @@
-// var url = `data/samples.json`;
-
 
 function buildMetadata(sample) {
   //build url
@@ -11,7 +9,6 @@ function buildMetadata(sample) {
     // console.log(metaData);
 
     var filteredMetaData = metaData.filter(metadataUnit => metadataUnit.id == sample)[0];
-    console.log(filteredMetaData)
 
     //     Clear existing metadata
     d3.select("#sample-metadata").html("");
@@ -21,7 +18,6 @@ function buildMetadata(sample) {
       d3.select("#sample-metadata")
         //append a paragraph tag
         .append("p").text(`${key}: ${value}`);
-      // buildGauge(data.WFREQ);
 
     });
   })
@@ -35,12 +31,12 @@ function buildPlots(sample) {
     //save arrays
     var setPlots = sampleData.samples;
     var filteredsetPlots = setPlots.filter(plotUnit => plotUnit.id == sample)[0];
-      console.log(filteredsetPlots)
+    // console.log(filteredsetPlots)
 
     var otu_ids = filteredsetPlots.otu_ids;
     var sample_values = filteredsetPlots.sample_values;
     var otu_labels = filteredsetPlots.otu_labels;
-
+ 
     //slice for top ten of each
     var otu_ids_10 = otu_ids.slice(0, 10);
     var sample_values_10 = sample_values.slice(0, 10);
@@ -146,16 +142,14 @@ function init() {
         .append("option")
         .text(sample)
         .property("value", sample);
-      // console.log(sampleNames)
 
     })
 
-     // Use the first sample from the list to build the initial plots
+    // Use the first sample from the list to build the initial plots
     const firstSample = sampleNames[0];
-    // console.log(firstSample)
     buildPlots(firstSample);
     buildMetadata(firstSample)
-    // bonus(firstSample);
+    bonus(firstSample);
 
   });
 
@@ -165,8 +159,8 @@ function optionChanged(newSample) {
   //     // Fetch new data each time a new sample is selected
   buildPlots(newSample);
   buildMetadata(newSample);
-  // bonus(newSample);
-  }
+  bonus(newSample);
+}
 
 //   // Initialize the dashboard
 init();
