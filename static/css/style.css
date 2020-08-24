@@ -6,3 +6,11 @@
 
 .jumbotron p {font-weight: bold;
     font-style: italic};
+
+#gauge {
+    color: red;
+}
+
+.panel-heading {
+    background-color: red;
+}
