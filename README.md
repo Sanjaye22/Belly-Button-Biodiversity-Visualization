@@ -58,4 +58,4 @@ Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly 
 
 - - -
 
-© 2019 Trilogy Education Services
+Link to Github Page - https://sanjaye22.github.io/Belly-Button-Biodiversity-Visualization/
