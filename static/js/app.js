@@ -6,7 +6,7 @@ function buildMetadata(sample) {
   //get json output with d3 and build panel
   d3.json(url).then(function (data) {
     var metaData = data.metadata;
-    console.log(metaData);
+    // console.log(data);
 
     var filteredMetaData = metaData.filter(metadataUnit => metadataUnit.id == sample)[0];
 
